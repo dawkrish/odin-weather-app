@@ -7,13 +7,16 @@ body{
 
 main{
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 input[type="text"], textarea {
     background-color : transparent;
     border: none;
     border-bottom: 1px white solid;
-    width: 100px;
+    width: 110px;
     color: white;
   }
 
@@ -47,4 +50,10 @@ input[type="text"], textarea:focus{
 #temperature{
     font-size: xx-large;
     font-weight: 900;
+}
+
+#right > div{
+
+    font-size: small;
+    font-weight: 600;
 }
