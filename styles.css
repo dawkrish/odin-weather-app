@@ -1,0 +1,50 @@
+body{
+    background: url('./bg2.jpg');
+    background-size: cover;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+main{
+    padding: 20px;
+}
+
+input[type="text"], textarea {
+    background-color : transparent;
+    border: none;
+    border-bottom: 1px white solid;
+    width: 100px;
+    color: white;
+  }
+
+input[type="text"], textarea:focus{
+    background-color : transparent;
+    outline: none;
+    font-size: 0.8em;
+  }
+
+#sumbit{
+    background-color : transparent;
+    border-radius: 5px;
+    border: 1px solid white;
+    color: white ;
+}
+
+
+#weather{
+    font-size: larger;
+}
+
+#city{
+    font-size: small;
+    font-weight: 550;
+}
+
+#date-day{
+    font-size: x-small;
+}
+
+#temperature{
+    font-size: xx-large;
+    font-weight: 900;
+}

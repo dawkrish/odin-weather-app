@@ -1,6 +1,23 @@
-const output = document.getElementById('output')
 const inputTag = document.getElementById('cityName')
 const sumbitBtn = document.getElementById('sumbit')
+const weatherTag = document.getElementById('weather')
+const cityTag = document.getElementById('city')
+const dateTag = document.getElementById('date-day')
+const tempTag = document.getElementById('temperature')
+
+const weekday_arr = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+const date = new Date();
+console.log(date);
+let hours = date.getHours()
+let mins = date.getMinutes()
+let weekday = weekday_arr[date.getDay()];
+let day = date.getDate()
+let month = date.getMonth() + 1
+let year = date.getFullYear()
+
+
+if(mins < 10) mins = "0" + mins 
 
 let input = inputTag.value
 const API_KEY = '81cf9d847238e86dbdb1391958a7d4de'
@@ -14,7 +31,12 @@ async function getData(){
 
   try{
     console.log(cityData);
-    output.innerHTML = `${city} :  ${cityData.weather[0].main}`
+
+    weatherTag.innerHTML = `${cityData.weather[0].main}`
+    cityTag.innerHTML = `${city}`
+    dateTag.innerHTML = `${weekday}, ${day}/${month}/${year}<br>${hours}:${mins}`
+    tempTag.innerHTML = `${Math.round(cityData.main.temp)} °C`
+
   }
   catch(err){
     output.innerHTML = cityData.message
@@ -27,5 +49,4 @@ sumbitBtn.addEventListener("click",(e)=>{
   e.preventDefault()
   city = inputTag.value
   getData()
-  
 })
