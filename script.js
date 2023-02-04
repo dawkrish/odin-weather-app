@@ -67,6 +67,17 @@ getData()
 
 sumbitBtn.addEventListener("click",(e)=>{
   e.preventDefault()
-  city = inputTag.value
-  getData()
+  if(inputTag.value == ""){
+    alert("Enter A city")
+  }
+  else{
+    city = inputTag.value
+    getData()
+  }
+})
+
+window.addEventListener("keydown",(e)=>{
+  if(e.key == "Enter"){
+    sumbitBtn.click()
+  }
 })
